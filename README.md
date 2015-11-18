@@ -31,11 +31,11 @@ This should give you a quick view of the hierarchy of the Django template "inclu
 
 ## levenshtein.py
 
-Found this [script online](http://hetland.org/coding/python/levenshtein.py) and was using for some analysis.
+Found this [function online](http://hetland.org/coding/python/levenshtein.py) and was using for some analysis.
 
 ## mysql_to_utf8.py
 
-Another quick script I found [online](http://stackoverflow.com/questions/2108824/mysql-incorrect-string-value-error-when-save-unicode-string-in-django/11597447#11597447) to help convert a MySQL database to UTF8.
+Another script I [found online](http://stackoverflow.com/questions/2108824/mysql-incorrect-string-value-error-when-save-unicode-string-in-django/11597447#11597447) to help convert a MySQL database to UTF8.
 
 # License
 
