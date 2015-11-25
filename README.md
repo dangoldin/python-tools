@@ -9,6 +9,9 @@ You should be able to just copy the repository and run the files. Note that some
 ## backup.py
 `` bash
 python backup.py
+# Or
+python backup.py > backup.sh
+sh backup.sh
 ```
 
 This generates a series of shell commands that can be used to back up a time series MySQL table. I haven't expanded it yet to take options from the command line but it should be straightforward to modify the script.

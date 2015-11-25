@@ -3,14 +3,14 @@ import datetime
 start = datetime.datetime.strptime("2012-11-16", "%Y-%m-%d")
 end = datetime.datetime.strptime("2013-10-25", "%Y-%m-%d")
 
+table_name = 'sql_table_name_here';
+
 dates = []
 while start < end:
     s = start.strftime('%Y-%m-%d')
     start += datetime.timedelta(days=1)
     e = start.strftime('%Y-%m-%d')
     dates.append((s,e))
-
-table_name = 'sql_table_name_here';
 
 HOST = 'host'
 PORT = '3306'
