@@ -7,7 +7,7 @@ You should be able to just copy the repository and run the files. Note that some
 # Usage
 
 ## backup.py
-`` bash
+``` bash
 python backup.py
 # Or
 python backup.py > backup.sh
@@ -42,7 +42,7 @@ Another script I [found online](http://stackoverflow.com/questions/2108824/mysql
 
 # License
 
-Copyright 2015 Dan Goldin
+Copyright 2016 Dan Goldin
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
