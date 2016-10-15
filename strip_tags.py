@@ -27,4 +27,3 @@ if __name__ == '__main__':
             g.write(clean)
 
     os.rename(fn + '.new', fn)
-
