@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 # From http://hetland.org/coding/python/levenshtein.py
 def levenshtein(a,b):
     "Calculates the Levenshtein distance between a and b."

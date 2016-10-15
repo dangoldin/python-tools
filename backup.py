@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 import datetime
 
 start = datetime.datetime.strptime("2012-11-16", "%Y-%m-%d")
