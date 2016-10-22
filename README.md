@@ -59,3 +59,12 @@ Remove the HTML tags from a given file.
 ``` bash
 $ python strip_tags.py file.html
 ```
+
+## ec2_to_csv.py
+
+Generate a CSV file with your EC2 instance data.
+
+``` bash
+$ python ec2_to_csv.py
+$ python ec2_to_csv.py out.csv
+```
