@@ -68,3 +68,11 @@ Generate a CSV file with your EC2 instance data.
 $ python ec2_to_csv.py
 $ python ec2_to_csv.py out.csv
 ```
+
+## plotter.py
+
+Accepts tab delimited data via stdin and generates a simple chart. It unfortunately has a dependency on matplotlib but at some point I'll try to clean that up.
+
+``` bash
+$ pbpaste | ./plotter.py
+```
