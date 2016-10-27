@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 # From http://hetland.org/coding/python/levenshtein.py
 def levenshtein(a,b):
