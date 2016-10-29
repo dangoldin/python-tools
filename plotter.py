@@ -8,13 +8,11 @@ import matplotlib.pyplot as plt
 
 # Usage: pbpaste | ./plotter.py
 
-if __name__ == '__main__':
+def read():
     # Assume first row is the header row
     rows = sys.stdin.readlines()
 
     header = rows[0].strip().split("\t")
-
-    print 'Header', header
 
     # Assume first column is the x axis (keep as text)
     xs = []
@@ -26,6 +24,11 @@ if __name__ == '__main__':
 
     c = StringIO(unicode("\n".join(numerical_data)))
     data = np.loadtxt(c)
+
+    return (header, xs, data)
+
+if __name__ == '__main__':
+    header, xs, data = read()
 
     # Super minimal plot
     # plt.style.use('ggplot')
