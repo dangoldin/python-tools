@@ -24,11 +24,23 @@ def add_layer(d):
     return d
 
 def plot(d):
-    plt.figure()
-    # Plot by layer
-    d.groupby('layer')['Cost'].sum().plot(kind='bar')
+    dpi = 200
 
-    plt.show()
+    # Various plots
+    plt.figure()
+    by_layer = d.groupby('layer')['Cost'].sum().sort_values(ascending=0).plot(kind='bar', sort_columns=True)
+    plt.tight_layout()
+    plt.savefig('by_layer.png', figsize=(2000/dpi, 2000/dpi), dpi=dpi)
+
+    plt.figure()
+    by_product_name = d.groupby('ProductName')['Cost'].sum().sort_values(ascending=0).plot(kind='bar', sort_columns=True)
+    plt.tight_layout()
+    plt.savefig('by_product_name.png', figsize=(2000/dpi, 2000/dpi), dpi=dpi)
+
+    plt.figure()
+    by_usage_type = d.groupby('UsageType')['Cost'].sum().sort_values(ascending=0).plot(kind='bar', sort_columns=True)
+    plt.tight_layout()
+    plt.savefig('by_usage_type.png', figsize=(2000/dpi, 2000/dpi), dpi=dpi)
 
 if __name__ == '__main__':
     fp = sys.argv[1]
