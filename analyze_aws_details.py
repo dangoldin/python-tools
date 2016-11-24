@@ -28,19 +28,39 @@ def plot(d):
 
     # Various plots
     plt.figure()
-    by_layer = d.groupby('layer')['Cost'].sum().sort_values(ascending=0).plot(kind='bar', sort_columns=True)
+    d.groupby('layer')['Cost'].sum().sort_values(ascending=0).plot(kind='bar', sort_columns=True)
     plt.tight_layout()
     plt.savefig('by_layer.png', figsize=(2000/dpi, 2000/dpi), dpi=dpi)
 
     plt.figure()
-    by_product_name = d.groupby('ProductName')['Cost'].sum().sort_values(ascending=0).plot(kind='bar', sort_columns=True)
+    d.groupby('ProductName')['Cost'].sum().sort_values(ascending=0).plot(kind='bar', sort_columns=True)
     plt.tight_layout()
     plt.savefig('by_product_name.png', figsize=(2000/dpi, 2000/dpi), dpi=dpi)
 
     plt.figure()
-    by_usage_type = d.groupby('UsageType')['Cost'].sum().sort_values(ascending=0).plot(kind='bar', sort_columns=True)
+    d.groupby('UsageType')['Cost'].sum().sort_values(ascending=0).plot(kind='bar', sort_columns=True)
     plt.tight_layout()
     plt.savefig('by_usage_type.png', figsize=(2000/dpi, 2000/dpi), dpi=dpi)
+
+    plt.figure()
+    d.groupby('UsageType')['Cost'].sum().sort_values(ascending=0)[:25].plot(kind='bar', sort_columns=True)
+    plt.tight_layout()
+    plt.savefig('by_usage_type_top_25.png', figsize=(2000/dpi, 2000/dpi), dpi=dpi)
+
+    plt.figure()
+    d.groupby('user:Name')['Cost'].sum().sort_values(ascending=0).plot(kind='bar', sort_columns=True)
+    plt.tight_layout()
+    plt.savefig('by_user_name.png', figsize=(2000/dpi, 2000/dpi), dpi=dpi)
+
+    plt.figure()
+    d.groupby('user:Name')['Cost'].sum().sort_values(ascending=0)[:25].plot(kind='bar', sort_columns=True)
+    plt.tight_layout()
+    plt.savefig('by_user_name_top_25.png', figsize=(2000/dpi, 2000/dpi), dpi=dpi)
+
+    plt.figure()
+    d.groupby(['layer', 'UsageType'])['Cost'].sum().sort_values(ascending=0)[:50].plot(kind='bar', sort_columns=True)
+    plt.tight_layout()
+    plt.savefig('by_layer_usage_type_top_50.png', figsize=(2000/dpi, 2000/dpi), dpi=dpi)
 
 if __name__ == '__main__':
     fp = sys.argv[1]
