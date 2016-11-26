@@ -2,7 +2,9 @@
 
 import sys
 import pandas as pd
+import numpy as np
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 def load_file(fp):
     dtype_cols = {
@@ -61,6 +63,11 @@ def plot(d):
     d.groupby(['layer', 'UsageType'])['Cost'].sum().sort_values(ascending=0)[:50].plot(kind='bar', sort_columns=True)
     plt.tight_layout()
     plt.savefig('by_layer_usage_type_top_50.png', figsize=(2000/dpi, 2000/dpi), dpi=dpi)
+
+    # plt.figure()
+    # sns.heatmap(d.groupby(['layer', 'UsageType'])['Cost'].agg({'Cost': np.sum}).reset_index().sort_values('Cost', ascending=0)[:50])
+    # plt.tight_layout()
+    # plt.savefig('by_layer_usage_type_top_50_heatmap.png', figsize=(2000/dpi, 2000/dpi), dpi=dpi)
 
 if __name__ == '__main__':
     fp = sys.argv[1]
