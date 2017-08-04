@@ -31,7 +31,18 @@ def json_to_csv(json_tree, opts_tree, so_far):
             for item in json_tree:
                 json_to_csv(item, opts_tree[key], so_far)
         else:
-            json_to_csv(json_tree, opts_tree[key], so_far)
+            if 'terminal' in opts_tree[key]:
+                print json_tree[key]
+            else:
+                json_to_csv(json_tree, opts_tree[key], so_far)
+    else:
+        for key in keys:
+            if 'terminal' in opts_tree[key]:
+                print json_tree[key],
+            else:
+                # Figure this out
+                pass
+        print
 
 if __name__ == '__main__':
     filename = sys.argv[1]
@@ -41,7 +52,5 @@ if __name__ == '__main__':
         json_tree = json.loads(f.read())
 
     opts_tree = parse_filter_opts(filter_opts)
-
-    print opts_tree
 
     json_to_csv(json_tree, opts_tree, [])
