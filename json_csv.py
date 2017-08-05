@@ -20,29 +20,19 @@ def parse_filter_opts(filter_ops):
             curr_node = curr_node[selector]
     return tree
 
-# Recurse along both options and trees in parallel
-# In case of a list we descend through each child as well
 def json_to_csv(json_tree, opts_tree, so_far):
     keys = opts_tree.keys()
-    if len(keys) == 1:
-        key = keys[0]
-        json_tree = json_tree[key]
-        if isinstance(json_tree, list):
-            for item in json_tree:
-                json_to_csv(item, opts_tree[key], so_far)
+    for key in keys:
+        if 'terminal' in opts_tree[key]:
+            print json_tree[key],
         else:
-            if 'terminal' in opts_tree[key]:
-                print json_tree[key]
+            json_tree = json_tree[key]
+            if isinstance(json_tree, list):
+                for item in json_tree:
+                    json_to_csv(item, opts_tree[key], so_far)
             else:
                 json_to_csv(json_tree, opts_tree[key], so_far)
-    else:
-        for key in keys:
-            if 'terminal' in opts_tree[key]:
-                print json_tree[key],
-            else:
-                # Figure this out
-                pass
-        print
+    print
 
 if __name__ == '__main__':
     filename = sys.argv[1]
