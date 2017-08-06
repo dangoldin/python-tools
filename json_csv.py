@@ -7,7 +7,8 @@ import json
 
 # {'Reservations': {'Instances': {'PrivateDnsName': {}, 'PublicDnsName': {}}}}
 
-def parse_filter_opts(filter_ops):
+def parse_filter_opts(filter_opts):
+    """ Convert command line argument to a tree representation """
     pieces = filter_opts.split(',')
     tree = {}
     for piece in pieces:
@@ -21,6 +22,7 @@ def parse_filter_opts(filter_ops):
     return tree
 
 def json_to_csv(json_tree, opts_tree, so_far):
+    """ Recursively go down both the option and json tree to extract info we care about """
     keys = opts_tree.keys()
     for key in keys:
         if 'terminal' in opts_tree[key]:
@@ -35,12 +37,12 @@ def json_to_csv(json_tree, opts_tree, so_far):
     print
 
 if __name__ == '__main__':
-    filename = sys.argv[1]
-    filter_opts = sys.argv[2]
+    FILENAME = sys.argv[1]
+    FILTER_OPTS = sys.argv[2]
 
-    with open(filename, 'r') as f:
-        json_tree = json.loads(f.read())
+    with open(FILENAME, 'r') as f:
+        JSON_TREE = json.loads(f.read())
 
-    opts_tree = parse_filter_opts(filter_opts)
+    OPTS_TREE = parse_filter_opts(FILTER_OPTS)
 
-    json_to_csv(json_tree, opts_tree, [])
+    json_to_csv(JSON_TREE, OPTS_TREE, [])
