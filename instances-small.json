@@ -1,0 +1,48 @@
+{
+    "Reservations": [
+        {
+            "Instances": [
+                {
+                    "PrivateDnsName": "test1.internal",
+                    "PublicDnsName": "test1.com",
+                    "Tags": [
+                        {
+                            "Value": "Bad",
+                            "Key": "Foo"
+                        },
+                        {
+                            "Value": "Bad2",
+                            "Key": "Bar"
+                        },
+                        {
+                            "Value": "My Name",
+                            "Key": "Name"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "Instances": [
+                {
+                    "PrivateDnsName": "test2.internal",
+                    "PublicDnsName": "test2.com",
+                    "Tags": [
+                        {
+                            "Value": "Bad3",
+                            "Key": "Foo"
+                        },
+                        {
+                            "Value": "Bad4",
+                            "Key": "Bar"
+                        },
+                        {
+                            "Value": "My Name 2",
+                            "Key": "Name"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
