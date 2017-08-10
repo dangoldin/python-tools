@@ -21,7 +21,7 @@ This generates a series of shell commands that can be used to back up a time ser
 $ python django_template_hierarchy_py /var/www/djangoproject/
 ```
 
-This should give you a quick view of the hierarchy of the Django template "includes" and "extends" commands in your project. The neat thing is that this is recursive so you can quickly see which template files affect others. For example:
+This should give you a quick view of the hierarchy of the Django template "includes" and "extends" commands in your project. The neat thing is that this is recursive so you can quickly see which template files are dependent on others. For example:
 
 ```
 { 'templates/base.html': {'templates/aux.html': {'templates/about.html': {},
@@ -69,10 +69,26 @@ $ python ec2_to_csv.py
 $ python ec2_to_csv.py out.csv
 ```
 
+## json_csv.py
+
+Generate a CSV file from a JSON file. This is meant to be a more generic version of ec2_to_csv.py but is still a work in progress for the more advanced use cases.
+
+``` bash
+$ python json_csv.py instances-small.json Reservations.Instances.PublicDnsName,Reservations.Instances.PrivateDnsName
+```
+
 ## plotter.py
 
 Accepts tab delimited data via stdin and generates a simple chart. It unfortunately has a dependency on matplotlib but at some point I'll try to clean that up.
 
 ``` bash
 $ pbpaste | ./plotter.py
+```
+
+## analyze_aws_details.py
+
+Load the AWS usage details log file and generate some charts to highlight where the usage is coming from.
+
+``` bash
+$ python analyze_aws_details.py awsfile.csv
 ```
