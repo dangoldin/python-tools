@@ -71,7 +71,7 @@ $ python ec2_to_csv.py out.csv
 
 ## json_csv.py
 
-Generate a CSV file from a JSON file. This is meant to be a more generic version of ec2_to_csv.py but is still a work in progress for the more advanced use cases.
+Generate a CSV file from a JSON file. This is meant to be a more generic version of ec2_to_csv.py but is still a work in progress since it hasn't been heavily tested and probably doesn't work for complex use cases.
 
 ``` bash
 $ python json_csv.py instances-small.json Reservations.Instances.PublicDnsName,Reservations.Instances.PrivateDnsName
