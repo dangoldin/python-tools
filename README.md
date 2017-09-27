@@ -92,3 +92,12 @@ Load the AWS usage details log file and generate some charts to highlight where 
 ``` bash
 $ python analyze_aws_details.py awsfile.csv
 ```
+
+## analyze_history.py
+
+Go through the specified file which should be in the form of the history command output and see the most frequent commands used.
+
+``` bash
+$ history > hist
+$ python analyze_history.py hist
+```
