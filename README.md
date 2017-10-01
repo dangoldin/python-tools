@@ -1,8 +1,10 @@
 # python-tools
+
 Random Python scripts I've written over the years to automate things that got too annoying to do manually.
 
 # Installation
-You should be able to just copy the repository and run the files. Note that some of them may only work on Unix based systems.
+
+For most of these you should be able to just copy the repository and run the files. Some will require the dependencies specificed in requirements.txt.
 
 # Usage
 
