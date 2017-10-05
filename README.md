@@ -103,3 +103,11 @@ Go through the specified file which should be in the form of the history command
 $ history > hist
 $ python analyze_history.py hist
 ```
+
+## date_replace.py
+
+Oftentimes I need to generate a set of commands where each one is a day of a date range. This script automates that.
+
+``` bash
+$ python date_replace.py "DELETE FROM table where ymd = '{{ DATE }}';" 2017-10-01 2017-11-01
+```
