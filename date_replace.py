@@ -10,5 +10,5 @@ if __name__ == '__main__':
     end = datetime.datetime.strptime(end_str, '%Y-%m-%d')
 
     while start < end:
-        print string_template.replace('{{ DATE }}', start.strftime('%Y-%m-%d'))
+        print string_template.replace('{{ YMD }}', start.strftime('%Y-%m-%d'))
         start = start + datetime.timedelta(days=1)

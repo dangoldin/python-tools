@@ -109,5 +109,5 @@ $ python analyze_history.py hist
 Oftentimes I need to generate a set of commands where each one is a day of a date range. This script automates that.
 
 ``` bash
-$ python date_replace.py "DELETE FROM table where ymd = '{{ DATE }}';" 2017-10-01 2017-11-01
+$ python date_replace.py "DELETE FROM table where ymd = '{{ YMD }}';" 2017-10-01 2017-11-01
 ```
