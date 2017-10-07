@@ -111,3 +111,11 @@ Oftentimes I need to generate a set of commands where each one is a day of a dat
 ``` bash
 $ python date_replace.py "DELETE FROM table where ymd = '{{ YMD }}';" 2017-10-01 2017-11-01
 ```
+
+## prepend_append.py
+
+Rather than keep trying to relearn the syntax for sed this is a simple script to prepend and append strings to every line in a file.
+
+``` bash
+$ python prepend_append.py filename.csv "StartOfLine" "EndOfLine"
+```
