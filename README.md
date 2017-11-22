@@ -125,5 +125,6 @@ $ python prepend_append.py filename.csv "StartOfLine" "EndOfLine"
 A pretty hacky script to archive tables as csv files to S3 by date range. The last argument is the day "step" and for small tables it can be large while large tables should keep it at 1 so only one day is archived at a time. To avoid having a long argument list some of the info is hardcoded in the file but it can be simplified.
 
 ``` bash
-$ python archive_tables.py table_name 2012-08-09 2013-01-13 28
+$ python archive_tables.py table_name 2012-08-09 2013-01-13 28 > commands_to_run.sh
+$ sh commands_to_run.sh
 ```
