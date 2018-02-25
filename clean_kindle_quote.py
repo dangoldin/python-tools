@@ -1,3 +1,15 @@
 import sys
 
-print "\n".join(line.replace(' "','"').replace(' .','.').replace(' ,',',').replace(' - ','-') for line in sys.stdin)
+replacement_map = {
+    ' "' : '"',
+    ' .' : '.',
+    ' ,' : ',',
+    ' - ': '-',
+    ' : ': ':',
+    ' ? ': '?',
+}
+
+for line in sys.stdin:
+    for k, v in replacement_map.iteritems():
+        line = line.replace(k, v)
+    print(line)
