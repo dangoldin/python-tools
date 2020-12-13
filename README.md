@@ -128,3 +128,11 @@ A pretty hacky script to archive tables as csv files to S3 by date range. The la
 $ python archive_tables.py table_name 2012-08-09 2013-01-13 28 > commands_to_run.sh
 $ sh commands_to_run.sh
 ```
+
+## count_aws_ips.py
+
+This is a simple script to just count the # of IPs AWS owns by hitting their [self-reported endpoint](https://ip-ranges.amazonaws.com/ip-ranges.json). For more context check out this [blog post](http://dangoldin.com/2020/12/11/amazon-owns-more-than-2b-worth-of-ipv4-addresses/).
+
+``` bash
+$ python count_aws_ips.py
+```
